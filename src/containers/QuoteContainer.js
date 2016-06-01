@@ -2,8 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 
 import { fetchQuote } from '../actions'
-import QuoteBox from '../components/QuoteBox'
-import QuoteButton from '../components/QuoteButton'
+import { QuoteBox, QuoteButton } from '../components'
 
 class QuoteContainer extends Component {
   constructor(props) {

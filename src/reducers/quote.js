@@ -1,26 +1,24 @@
-const todo = (state, action) => {
+import {
+  REQUEST_QUOTE, RECEIVE_QUOTE
+} from '../actions'
+
+function quote(state = {
+  fetching: false,
+  quote : 'Default Quote'
+}, action) {
   switch (action.type) {
-    case 'ADD_TODO':
-      return {
-        id: action.id,
-        text: action.text,
-        completed: false
-      }
+    case REQUEST_QUOTE:
+      return Object.assign({}, state, {
+        fetching: true
+      })
+    case RECEIVE_QUOTE:
+      return Object.assign({}, state, {
+        fetching: false,
+      quote: action.quote
+      })
     default:
       return state
   }
 }
 
-const todos = (state = [], action) => {
-  switch (action.type) {
-    case 'ADD_TODO':
-      return [
-        ...state,
-        todo(undefined, action)
-      ]
-    default:
-      return state
-  }
-}
-
-export default todos
+export default quote

@@ -1,9 +1,4 @@
 {
-  network: {
-    loading: boolean
-  },
-  quote: {
-    text: String,
-    receivedAt: Date
-  }
+  fetching: boolean,
+  quote: String
 }

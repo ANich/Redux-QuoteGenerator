@@ -1,0 +1,1 @@
+export QuoteContainer from './QuoteContainer'

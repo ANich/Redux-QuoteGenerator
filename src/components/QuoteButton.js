@@ -12,3 +12,8 @@ export default class QuoteButton extends Component {
     )
   }
 }
+
+QuoteButton.propTypes = {
+  onClick: PropTypes.func.isRequired,
+  disabled: PropTypes.bool.isRequired
+}
