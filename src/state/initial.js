@@ -1,4 +1,10 @@
 export default {
-  fetching: false,
-  quote: 'Default Quote'
+  network: {
+    fetching: false
+  },
+  quote: {
+    text: '',
+    author: '',
+    link: ''
+  }
 }

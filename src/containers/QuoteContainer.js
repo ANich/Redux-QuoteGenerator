@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 
 import { fetchQuote } from '../actions'
-import { QuoteBox, QuoteButton } from '../components'
+import { Quote, QuoteButton } from '../components'
 
 class QuoteContainer extends Component {
   constructor(props) {
@@ -15,12 +15,12 @@ class QuoteContainer extends Component {
   }
 
   render() {
-    const { quote, fetching } = this.props
+    const { quote, network } = this.props
     return (
       <div>
-        <QuoteBox text={quote} />
+        <Quote quote={quote} />
         <QuoteButton
-          disabled = {fetching}
+          disabled = {network.fetching}
           onClick = {this.handleButtonClick}
         />
       </div>
@@ -29,10 +29,10 @@ class QuoteContainer extends Component {
 }
 
 const mapStateToProps = (state) => {
-  const { fetching, quote } = state
+  const { quote, network } = state
   return {
-    fetching,
-    quote
+    quote,
+    network
   }
 }
 

@@ -24,8 +24,9 @@ var config = getConfig({
 if (isTest) {
 
   config.externals = {
-   'react/lib/ReactContext': true,
-   'react/lib/ExecutionEnvironment': true
+    'react/addons': true,
+    'react/lib/ReactContext': true,
+    'react/lib/ExecutionEnvironment': true
   }
 
   config.plugins = config.plugins.filter(p => {

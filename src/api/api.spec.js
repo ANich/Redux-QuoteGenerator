@@ -1,9 +1,7 @@
-import expect from 'expect'
-
 import { formatResponse } from './api'
 
 describe('Quotes On Design API', () => {
-  it('should return the raw text from the content field of the sample response', () => {
+  it('should return the correctly formatted response', () => {
     const SAMPLE_RESPONSE = [
       {
         "ID":2391,
@@ -12,9 +10,15 @@ describe('Quotes On Design API', () => {
         "link":"http:\/\/quotesondesign.com\/samadara-ginige-4\/"
       }
     ]
-    const MATCH = /A good design solves a problem. A bad design creates many./
 
-  expect(formatResponse(SAMPLE_RESPONSE)).toMatch(MATCH)
+    const expected = {
+      author: 'Samadara Ginige',
+      text: 'A good design solves a problem. A bad design creates many.',
+      link: 'http://quotesondesign.com/samadara-ginige-4/'
+    }
+
+    expect(formatResponse(SAMPLE_RESPONSE)).to.deep.equal(expected)
+
   })
 })
 

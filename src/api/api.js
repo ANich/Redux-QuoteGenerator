@@ -1,9 +1,19 @@
 export function formatResponse(json) {
+  const author = json[0].title
+  const link = json[0].link
+
   // The quotesondesign api returns the quote content within <p> tags
   // Here's a hacky way to format it:
+  const rawContent = json[0].content.replace(/\n/, '') //Strip line feed
   let temporaryElement = document.createElement("p")
-  temporaryElement.innerHTML = json[0].content
-  return temporaryElement.innerText
+  temporaryElement.innerHTML = rawContent
+  const text = temporaryElement.innerText
+
+  return {
+    author,
+    text,
+    link
+  }
 }
 
 export function getQuote() {

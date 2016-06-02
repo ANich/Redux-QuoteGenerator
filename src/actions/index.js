@@ -14,7 +14,9 @@ function requestQuote() {
 function receiveQuote(quote) {
   return {
     type: RECEIVE_QUOTE,
-    quote
+    text: quote.text,
+    author: quote.author,
+    link: quote.link
   }
 }
 

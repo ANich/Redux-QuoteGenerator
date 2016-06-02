@@ -1,3 +1,3 @@
 export App from './App'
-export QuoteBox from './QuoteBox'
+export Quote from './Quote'
 export QuoteButton from './QuoteButton'
