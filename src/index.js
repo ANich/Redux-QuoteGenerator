@@ -6,11 +6,10 @@ import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 import createLogger from 'redux-logger'
 
-import { initialState } from './state'
-import { reducer } from './reducers'
+import reducer from './reducers'
 import { App } from './components'
 
-let store = createStore(reducer, initialState, applyMiddleware(thunk, createLogger()))
+let store = createStore(reducer, applyMiddleware(thunk, createLogger()))
 
 render(
   <Provider store={store}>

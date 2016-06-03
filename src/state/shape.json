@@ -2,9 +2,11 @@
   network: {
     fetching: boolean
   },
-  quote: {
-    text: String,
-    author: String,
-    link: String
-  }
+  quotes: [
+    {
+      text: String,
+      author: String,
+      link: String
+    }  
+  ]
 }
