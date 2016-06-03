@@ -3,7 +3,7 @@ import { shallow } from 'enzyme'
 
 import Quote from './Quote'
 
-describe('Filled <Quote />', () => {
+describe('<Quote />', () => {
   let wrapper
   const quote = {
     text: 'Test Quote',
