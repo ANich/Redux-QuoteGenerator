@@ -6,7 +6,7 @@ import { QuoteContainer} from '../../containers'
 
 const App = () => (
   <div>
-    <MuiThemeProvider muiThemeProvider={getMuiTheme()}>
+    <MuiThemeProvider muiTheme={getMuiTheme()}>
       <QuoteContainer />
     </MuiThemeProvider>
   </div>
