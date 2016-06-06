@@ -9,6 +9,8 @@ import createLogger from 'redux-logger'
 import reducer from './reducers'
 import { App } from './components'
 
+import './app.css'
+
 let store = createStore(reducer, applyMiddleware(thunk, createLogger()))
 
 render(

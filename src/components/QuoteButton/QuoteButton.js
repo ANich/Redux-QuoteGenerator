@@ -1,14 +1,20 @@
 import React, { PropTypes, Component } from 'react'
-import FlatButton from 'material-ui/FlatButton'
+import FloatingActionButton from 'material-ui/FloatingActionButton'
+import ContentAdd from 'material-ui/svg-icons/content/add'
+
+import styles from './styles.module.css';
 
 export default class QuoteButton extends Component {
   render() {
     return (
-      <FlatButton
-        label="Get Quote"
-        primary={true}
-        onClick={this.props.onClick}
-        disabled={this.props.disabled}/>
+      <div className={styles.buttonContainer}>
+        <FloatingActionButton
+          onClick={this.props.onClick}
+          disabled={this.props.disabled}
+        >
+          <ContentAdd />
+        </FloatingActionButton>
+      </div>
     )
   }
 }
@@ -16,4 +22,8 @@ export default class QuoteButton extends Component {
 QuoteButton.propTypes = {
   onClick: PropTypes.func.isRequired,
   disabled: PropTypes.bool.isRequired
+}
+
+QuoteButton.defaultProps = {
+  disabled: false
 }
