@@ -1,4 +1,6 @@
 ## Redux-QuoteGenerator
+[![Build Status](https://travis-ci.org/ANich/Redux-QuoteGenerator.svg?branch=master)](https://travis-ci.org/ANich/Redux-QuoteGenerator)
+
 This is mostly a playground for me to test technologies and techniques in the react/redux ecosystem. Feel free to clone and try it out yourself!
 
 Based on the [freeCodeCamp](http://www.freecodecamp.com/) Quote Generator Project.
