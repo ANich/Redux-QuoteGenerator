@@ -10,10 +10,7 @@ import { App } from './components'
 
 import './app.css'
 
-const middleware = process.env.NODE_ENV === 'development' ?
-[thunk, createLogger()] : [thunk]
-
-let store = createStore(reducer, applyMiddleware(...middleware))
+let store = createStore(reducer, applyMiddleware(thunk, createLogger()))
 
 render(
   <Provider store={store}>
