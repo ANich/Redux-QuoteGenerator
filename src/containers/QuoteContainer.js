@@ -7,21 +7,16 @@ import { Quote, QuoteButton, QuoteList } from '../components'
 class QuoteContainer extends Component {
   constructor(props) {
     super(props)
-    this.handleButtonClick = this.handleButtonClick.bind(this)
-  }
-
-  handleButtonClick() {
-    this.props.dispatch(fetchQuote())
   }
 
   render() {
-    const { quotes, network } = this.props
+    const { quotes, network, onButtonClick } = this.props
     return (
       <div>
         <QuoteList quotes={quotes} />
         <QuoteButton
           disabled = {network.fetching}
-          onClick = {this.handleButtonClick}
+          onClick = {onButtonClick}
         />
       </div>
     )
@@ -36,4 +31,15 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(QuoteContainer)
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onButtonClick: () => {
+      dispatch(fetchQuote())
+   }
+  }
+}
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(QuoteContainer)
